@@ -11,4 +11,4 @@ message_correct: Верно
 message_incorrect: Неверно
 files:
 - name: __init__.py
-  visible: false
+  visible: true

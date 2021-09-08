@@ -1,12 +1,12 @@
 {
   "environment" : "unittest",
-  "summary" : "This is an introductory Python course.\n- The course will be most beneficial for beginner-level Python learners.\n- The course covers core Python features.\n- It contains hands-on examples of Python code implementation and exercises to practice new skills.\n- The course is based on the author's personal experience in Python development.",
-  "title" : "lesson10_part2_source",
+  "summary" : "Привет! Это практические задания курса \"Знакомство с Flask\" 10 урока",
+  "title" : "Flask Skypro. Урок 10. Часть 2",
   "authors" : [
     "Денис Никаноров"
   ],
   "programming_language" : "Python",
-  "language" : "en",
+  "language" : "ru",
   "course_type" : "PyCharm",
   "items" : [
     {
@@ -45,7 +45,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "polls.html" : {
@@ -87,7 +87,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -119,7 +119,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -155,7 +155,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -191,7 +191,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -255,7 +255,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "text.html" : {
@@ -303,7 +303,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "form.html" : {
@@ -349,7 +349,7 @@
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -372,19 +372,19 @@
             "tests/test_task.py" : {
               "name" : "tests/test_task.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : "from lesson.utils import SkyproTestCase\nfrom lesson.candidates_search.task import app\nfrom bs4 import BeautifulSoup\n\n\nclass TestCase(SkyproTestCase):\n    def test_form(self):\n        with app.test_client() as client:\n            get_resp = client.get('/')\n            self.assertEqual(200, get_resp.status_code, msg='Представление должно обрабатывать GET-запросы по урлу /')\n\n            post_resp = client.post('/')\n            self.assertEqual(200, post_resp.status_code, msg='Представление должно обрабатывать POST-запросы по урлу /')\n\n            self._test_get(get_resp)\n            self._test_post(client)\n\n    def _test_get(self, get_resp):\n        soup = BeautifulSoup(get_resp.get_data(True), 'html5lib')\n\n        forms = soup.find_all('form')\n\n        self.assertEqual(1, len(forms), msg='Представление по GET-запросу должно возвращать страницу с 1 формой')\n\n        form = forms[0]\n\n        self.assertEqual('post', form.get('method'), msg='У формы должен быть задан атрибут method')\n\n        all_p = soup.find_all('p')\n\n        self.assertTrue(len(all_p) > 0, msg='На странице должен присутствовать список кандидатов.'\n                                            ' Проверьте, что вы не изменяли html-разметку списка кандидатов'\n                                            ' исходного примера.')\n\n    def _test_post(self, client):\n        resp = client.post('/', data={'position': 'python'})\n\n        soup = BeautifulSoup(resp.get_data(True), 'html5lib')\n\n        all_p = soup.find_all('p')\n\n        msg = 'По запросу python должен найтись 1 кандидат. ' \\\n              'Проверьте, что вы используете алгоритм поиска из примера, ' \\\n              'и обрабатываете параметры не из GET-запроса, а из POST-запроса'\n\n        self.assertEqual(1, len(all_p), msg)\n        self.assertIn('python', all_p[0].find('span', class_='position').text.lower(), msg)\n\n        resp = client.post('/', data={'position': 'develop'})\n\n        soup = BeautifulSoup(resp.get_data(True), 'html5lib')\n\n        all_p = soup.find_all('p')\n\n        msg = 'По запросу develop должны найтись 3 кандидата. ' \\\n              'Проверьте, что вы используете алгоритм поиска из примера, ' \\\n              'и обрабатываете параметры не из GET-запроса, а из POST-запроса'\n\n        self.assertEqual(3, len(all_p), msg)\n\n        for p_item in all_p:\n            self.assertIn('develop', p_item.find('span', class_='position').text.lower(), msg)\n"
             },
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "tests/__init__.py" : {
               "name" : "tests/__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "templates/candidates.html" : {
@@ -413,19 +413,19 @@
             "tests/test_task.py" : {
               "name" : "tests/test_task.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : "from bs4 import BeautifulSoup\n\nfrom lesson.utils import SkyproTestCase\n\n\nclass TestCase(SkyproTestCase):\n    def test_wiki(self):\n        with open('wiki.html', 'r') as fh:\n            soup = BeautifulSoup(fh.read(), 'html5lib')\n\n            all_b = soup.find_all('b')\n\n            self.assertEqual(1, len(all_b), msg='На странице должен быть 1 тег b')\n            self.assertEqual('Содержание', all_b[0].text, msg='Текст внутри тега b должен быть Содержание')\n\n            all_ul = soup.find_all('ul')\n\n            self.assertEqual(1, len(all_ul), msg='На странице должен быть 1 тег ul с оглавлением')\n\n            all_li = all_ul[0].find_all('li')\n            self.assertEqual(5, len(all_li), msg='В списке с оглавлением должно быть 5 элементов с тегом li')\n\n            for li_item in all_li:\n                all_a = li_item.find_all('a')\n                self.assertEqual(1, len(all_a),\n                                 msg='Внутри каждого элемента списка должна быть ссылка на параграф или изображение')\n\n                self.assertNotEqual('', all_a[0].get('href'),\n                                    msg='У ссылок внутри элементов списка должны быть заполнены атрибуты href')\n\n            all_p = soup.find_all('p')\n\n            self.assertEqual(4, len(all_p), msg='На странице должно быть 4 параграфа с текстом')\n\n            for p_item in all_p:\n                self.assertNotEqual('', p_item.get('id', ''), msg='У параграфов должен быть задан атрибут id')\n\n            all_img = soup.find_all('img')\n\n            self.assertEqual(1, len(all_img), msg='На странице должно должно быть 1 изображение с Гвидо')\n            self.assertNotEqual('', all_img[0].get('id', ''), msg='У изображения должен быть задан атрибут id')\n            self.assertNotEqual('', all_img[0].get('alt', ''), msg='У изображения должен быть задан атрибут alt')\n\n            for li_item, p_item in zip(all_li, all_p+all_img):\n                self.assertEqual(li_item.find('a')['href'], '#' + p_item['id'],\n                                 msg='Атрибут href у ссылки должен быть равен # + значение атрибута id того элемента, '\n                                     'на который ссылается данный элемент списка.')\n"
             },
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "tests/__init__.py" : {
               "name" : "tests/__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "wiki.html" : {
@@ -460,19 +460,19 @@
             "tests/test_task.py" : {
               "name" : "tests/test_task.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : "from lesson.utils import SkyproTestCase\nfrom lesson.search_form.task import app\nfrom bs4 import BeautifulSoup\n\n\nclass TestCase(SkyproTestCase):\n    def test_form(self):\n        with app.test_client() as client:\n            get_resp = client.get('/search/')\n            self.assertEqual(200, get_resp.status_code,\n                             msg='Представление должно обрабатывать GET-запросы по урлу /search/')\n\n            post_resp = client.post('/search/')\n            self.assertEqual(200, post_resp.status_code,\n                             msg='Представление должно обрабатывать POST-запросы по урлу /search/')\n\n            self._test_get(client)\n            self._test_post(client)\n\n    def _test_get(self, client):\n        resp = client.get('/search/')\n\n        soup = BeautifulSoup(resp.get_data(True), 'html5lib')\n\n        forms = soup.find_all('form')\n\n        self.assertEqual(1, len(forms), msg='Представление по GET-запросу должно возвращать страницу с 1 формой')\n\n        form = forms[0]\n\n        self.assertEqual('post', form.get('method'), msg='У формы должен быть задан атрибут method')\n\n        all_text_input = form.find_all('input', type='text')\n\n        self.assertEqual(1, len(all_text_input), msg='В форме должно быть 1 текстовое поле (атрибут type=\"text\")')\n\n        self.assertEqual('search', all_text_input[0].get('name'),\n                         msg='У текстового поля атрибут name должен быть равен \"search\"')\n\n        input_submit = form.find_all('input', type='submit') + form.find_all('button', type='submit')\n\n        self.assertEqual(1, len(input_submit), msg='В форме должна быть 1 кнопка с типом submit (input или button)')\n\n    def _test_post(self, client):\n        search = 'python'\n        resp = client.post('/search/', data={'search': search})\n\n        soup = BeautifulSoup(resp.get_data(True), 'html5lib')\n\n        all_h1 = soup.find_all('h1')\n\n        msg = f'В ответ на POST-запрос приложение должно возвращать 1 заголовок h1 с текстом ' \\\n              '\"Результаты по запросу {search}\"'\n\n        self.assertEqual(1, len(all_h1), msg)\n\n        h1 = all_h1[0]\n\n        self.assertEqual(f'Результаты по запросу {search}', h1.text, msg)\n\n        all_i = h1.find_all('i') + h1.find_all('em')\n\n        msg = 'В заголовке h1 значение, указанное в текстовом поле, должно отображаться курсивом'\n\n        self.assertEqual(1, len(all_i), msg)\n        self.assertEqual(search, all_i[0].text, msg)\n"
             },
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "tests/__init__.py" : {
               "name" : "tests/__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             }
           },
@@ -489,19 +489,19 @@
             "tests/test_task.py" : {
               "name" : "tests/test_task.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : "from lesson.utils import SkyproTestCase\n\nfrom bs4 import BeautifulSoup\n\n\nclass TestCase(SkyproTestCase):\n    def test_form(self):\n        with open('form.html', 'r') as fh:\n            soup = BeautifulSoup(fh.read(), \"html.parser\")\n\n            all_body = soup.find_all('body')\n\n            self.assertEqual(1, len(all_body), msg='В документе должен быть тег body')\n\n            body = all_body[0]\n            all_form = body.find_all('form')\n\n            self.assertEqual(1, len(all_form), msg='Внутри тега body должна быть форма (тег form)')\n\n            form = all_form[0]\n            all_p = form.find_all('p')\n            msg = 'Внутри тега form должен быть 1 тег p с текстом Пример формы'\n\n            self.assertEqual(1, len(all_p), msg)\n            self.assertEqual('Пример формы', all_p[0].text, msg)\n\n            all_label = form.find_all('label')\n            msg = 'Внутри тега form должен быть 1 тег label с текстом Ваше имя:'\n\n            self.assertEqual(1, len(all_label), msg)\n            self.assertEqual('Ваше имя:', all_label[0].text, msg)\n\n            self.assertEqual(None, all_label[0].get('value'), msg='Тег label не имеет атрибута value')\n            self.assertEqual('br', all_label[0].find_next().name, msg='После тега label должен быть тег <br>')\n\n            all_input = form.find_all('input')\n            msg = 'Внутри тега form должен быть 1 тег input с атрибутом type=text и value=Мое имя'\n\n            self.assertEqual(1, len(all_input), msg)\n            self.assertEqual('', all_input[0].text, msg)\n            self.assertEqual('text', all_input[0].get('type'), msg)\n            self.assertEqual('Мое имя', all_input[0].get('value'), msg)\n\n            self.assertEqual('br', all_input[0].next_sibling.name,\n                             msg='После тега input должно быть текста Мое имя, а должен идти тег <br>')\n\n            all_button = form.find_all('button')\n            msg = 'Внутри тега form должен быть 1 тег button с атрибутом type=submit и содержимым Отправить'\n\n            self.assertEqual(1, len(all_button), msg)\n            self.assertEqual('Отправить', all_button[0].text, msg)\n            self.assertEqual('submit', all_button[0].get('type'), msg)\n            self.assertEqual('', all_button[0].get('value', ''),\n                             msg='У тега button атрибут value не должен быть равен Отправить')\n\n"
             },
             "__init__.py" : {
               "name" : "__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "tests/__init__.py" : {
               "name" : "tests/__init__.py",
               "placeholders" : [ ],
-              "is_visible" : false,
+              "is_visible" : true,
               "text" : ""
             },
             "form.html" : {
